@@ -1,0 +1,46 @@
+@import "./variables";
+@import "./mixin";
+
+body {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  background: #f6f6f6;
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+  background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+}
+
+.header h1 {
+  font-family: 'Shrikhand', cursive;
+  text-align: center;
+}
+
+.location {
+  @include flexcenter;
+  background-color: rgb(235, 233, 233);
+}
+
+main {
+  @include flexcenter;
+  flex-direction: column;
+}
+
+.hero_container {
+  @include flexcenter;
+  flex-direction: column;
+  background-color: rgb(245, 243, 243);
+  
+  .hero_btn {
+    @include flexcenter;
+  }
+
+}
+
+
+
+
+
