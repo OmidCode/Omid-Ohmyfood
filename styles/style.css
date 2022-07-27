@@ -324,4 +324,181 @@ main {
   margin-right: 0.5rem;
 }
 
-/*# sourceMappingURL=style.css.map */
+/** Menu **/
+
+a {
+  text-decoration: none;
+}
+
+.fa-arrow-left {
+  position: relative;
+  top: 20px;
+  right: 45px;
+  font-size: x-large;
+}
+
+.restaurant img {
+  height: 250px;
+  width: 100%;
+  object-fit: cover;
+}
+.restaurant__name {
+  border-top-left-radius: 40px 40px;
+  border-top-right-radius: 40px 40px;
+  transform: translateY(-80px);
+  margin-bottom: -80px;
+  padding: 5px 5vw;
+  background-color: #f6f6f6;
+  font-family: shrikhand, cursive;
+  font-size: large;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  padding: 0 0vw;
+}
+.menu h3 {
+  padding-bottom: 0px;
+  margin: 0 5vw;
+}
+.menu h4, .menu p {
+  padding: 0.25rem 5vw;
+}
+.menu h4 {
+  margin-bottom: 0px;
+  margin-top: 0px;
+  font-size: larger;
+  white-space: nowrap;
+  /* interdiction de passer à la ligne */
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.menu p {
+  margin-bottom: 5px;
+}
+
+.underline-h3 {
+  width: 40px;
+  height: 0.25em;
+  background-color: #99e2d0;
+  margin: 0;
+  padding: 0;
+  margin-left: 5vw;
+}
+
+.menu__carte_entrees .card {
+  animation-name: appear;
+  animation-duration: 1000ms;
+  animation-fill-mode: backwards;
+}
+
+.menu__carte_plats .card {
+  animation-name: appear;
+  animation-duration: 1000ms;
+  animation-fill-mode: backwards;
+}
+
+.menu__carte_plats .card {
+  animation-delay: 500ms;
+}
+
+.menu__carte_desserts .card {
+  animation-name: appear;
+  animation-duration: 1000ms;
+  animation-fill-mode: backwards;
+}
+
+.card {
+  background-color: white;
+  box-shadow: 2px 2px 2px lightgrey;
+  border-radius: 20px 20px;
+  height: fit-content;
+  margin: 1rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  transition: all 2000ms;
+  cursor: pointer;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.card__text {
+  display: flex;
+  flex: 100%;
+  white-space: nowrap;
+  /* interdiction de passer à la ligne */
+  flex-direction: column;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  transition: all 700ms;
+}
+.card__text__description {
+  flex: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.card__text__description p {
+  margin-top: 2px;
+  overflow: hidden;
+  white-space: nowrap;
+  /* interdiction de passer à la ligne */
+}
+.card__text__description__ingredients {
+  text-overflow: ellipsis;
+}
+.card__text__description__price {
+  font-weight: bold;
+}
+.card__check {
+  flex: 0%;
+  color: #f6f6f6;
+  background-color: #99e2d0;
+  font-size: xx-large;
+  text-align: center;
+  height: 2.1em;
+  /* hauteur du parent */
+  line-height: 2.1em;
+  /* hauteur de ligne (identique) */
+  white-space: nowrap;
+  /* interdiction de passer à la ligne */
+  border-top-right-radius: 20px 20px;
+  border-bottom-right-radius: 20px 20px;
+  transform: translateX(100px);
+  cursor: pointer;
+  transition: all 700ms;
+}
+.card:hover > .card__check {
+  flex: 25%;
+  transform: translateX(0px);
+  background-color: #99e2d0;
+  cursor: pointer;
+  color: #f6f6f6;
+}
+.card:hover > .card__text {
+  flex: 75%;
+}
+.card:hover .fa-check-circle {
+  transform: rotate(0deg);
+}
+
+.fa-check-circle {
+  transform: rotate(359deg);
+  transition: transform 700ms;
+}
+
+.btn {
+  width: 200px;
+  align-self: center;
+  margin: 2rem;
+}
+
+
+.button {
+  display: flex;
+  justify-content: center;
+}
