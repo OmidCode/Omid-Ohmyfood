@@ -21,6 +21,11 @@ img {
   max-width: 100%;
   height: auto;
 }
+
+a {
+  text-decoration: none;
+}
+
 /**reset**/
 
 body {
@@ -31,10 +36,9 @@ body {
 
 .header {
   display: flex;
-    justify-content: center;
-    box-shadow: 0px 5px 5px lightgrey;
-    margin-bottom: 5px;
-    height: 80px;
+  justify-content: center;
+  margin-bottom: 5px;
+  height: 80px;
 }
 
 .header h1 {
@@ -42,6 +46,10 @@ body {
   display: flex;  
   text-align: center;
   align-items: center;
+}
+
+.fa-arrow-left {
+  padding-right: 50px;
 }
 
 h2 {
@@ -85,7 +93,8 @@ main {
   align-content: center;
   flex-direction: column;
   text-align: center;
-  background: linear-gradient(white, rgb(247, 246, 246));
+  background: linear-gradient(rgb(250, 249, 249), rgb(247, 246, 246));
+  padding-bottom: 64px;
 }
 
 .hero_title {
@@ -116,23 +125,17 @@ main {
   padding-inline-end: 10%;
 }
 
-.hero_container .hero_btn {
-  display: flex;
-  justify-content: center;
-  align-content: center;
-}
-
 .btn {
   border: 0;
   padding: 1rem 1.5rem;
-  font-weight: 400;
-  font-size: 1rem;
+  font-weight: 500;
+  font-size: 1.1rem;
   border-radius: 100px;
   color: #fff;
   background: linear-gradient(170deg, #ff79da 0%, #9356dc 100%);
   box-shadow: 0.25rem 0.25rem 10px rgb(0 0 0 / 25%);
-  margin-bottom: 48px;
 }
+
 
 /**Steps-section**/
 
@@ -169,18 +172,18 @@ main {
 
 .number {
   font-weight: 400;
-    font-size: 0.87rem;
-    background-color: #9356dc;
-    height: 24px;
-    width: 24px;
-    border-radius: 50%;
-    line-height: 24px;
-    vertical-align: middle;
-    text-align: center;
-    color: white;
-    margin-left: -12px;
-    margin-right: 20px;
-    margin-top: 20px;
+  font-size: 0.87rem;
+  background-color: #9356dc;
+  height: 24px;
+  width: 24px;
+  border-radius: 50%;
+  line-height: 24px;
+  vertical-align: middle;
+  text-align: center;
+  color: white;
+  margin-left: -12px;
+  margin-right: 20px;
+  margin-top: 20px;
 }
 
 .steps-icon {
@@ -639,40 +642,6 @@ header a .arrow__back {
   transition: all 0.5s;
 }
 
-footer {
-  padding: 1rem;
-  background: #383838;
-  display: flex;
-  flex-direction: column;
-}
-
-footer .omf__text {
-  font-family: 'Shrikhand', "cursive";
-  font-size: 1.2rem;
-  margin: 0 0 1rem;
-  color: #fff;
-}
-
-footer ul {
-  list-style: none;
-}
-
-footer ul li {
-  display: flex;
-  position: relative;
-  margin: .5rem 0;
-}
-
-footer ul li a {
-  text-decoration: none;
-  color: white;
-}
-
-footer ul li a i {
-  width: 1.2rem;
-  margin-right: .5rem;
-}
-
 @media screen and (min-width: 768px) {
   .tutorial .container {
     width: 75%;
@@ -709,10 +678,12 @@ footer ul li a i {
 
 .menu__header {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
   align-items: center;
-  padding: 1rem 2rem 0 1rem;
+  padding: 1rem 6rem 0 1rem;
   text-align: center;
+  margin-bottom: 5px;
+  height: 80px;
 }
 
 .menu__header h1 {
@@ -892,6 +863,10 @@ footer ul li a i {
    animation-delay: 0.8s;
 }
 
+.menu .menu__cards .menu__card .delay-9 {
+  animation-delay: 0.9s;
+}
+
 .menu .btn__cards {
   padding: 3rem 0;
   display: flex;
@@ -931,15 +906,6 @@ footer ul li a i {
   }
 }
 
-@-webkit-keyframes checkMenu {
-  0% {
-    transform: scale(0);
-  }
-  100% {
-    transform: scale(1);
-  }
-}
-
 @keyframes checkMenu {
   0% {
     transform: scale(0);
@@ -949,7 +915,42 @@ footer ul li a i {
   }
 }
 
+/* spinner loading */
 
+.spinner {
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  z-index: 1;
+}
 
+.spinner div {
+  box-sizing: border-box;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 10px solid transparent;
+  border-top-color: #9356DC ;
+  border-radius: 50%;
+  animation: spinnerOne 1.2s linear infinite;
+}
 
+.spinner div:nth-child(2) {
+  border: 10px solid transparent;
+  border-bottom-color: #9356DC ;
+  animation: spinnerTwo 1.2s linear infinite; 
+}
 
+@keyframes spinnerOne {
+  0% {transform: rotate(0deg); border-width: 10px; }
+  50% {transform: rotate(180deg); border-width: 1px; }
+  100% {transform: rotate(360deg); border-width: 10px; }
+}
+
+@keyframes spinnerTwo {
+  0% {transform: rotate(0deg); border-width: 1px; }
+  50% {transform: rotate(180deg); border-width: 10px; }
+  100% {transform: rotate(360deg); border-width: 1px; }
+}
