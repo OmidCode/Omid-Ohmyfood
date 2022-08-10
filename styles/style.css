@@ -286,6 +286,8 @@ main {
   align-items: center;
   justify-content: center;
   font-size: 2rem;
+  position: absolute;
+  right: 15px;
 }
 
 /**Footer**/
@@ -326,7 +328,6 @@ main {
   width: 1.2rem;
   margin-right: 0.5rem;
 }
-
 
 /** Menu **/
 
@@ -638,30 +639,31 @@ header a .arrow__back {
 
 #content .restaurants .container .cards .card .card__footer .card__heart .heart__color:hover {
   opacity: 1;
-  background: linear-gradient(0deg, #9356dc, #ff79da);
+  background-color: linear-gradient(0deg, #9356dc, #ff79da);
   transition: all 0.5s;
 }
 
 @media screen and (min-width: 768px) {
-  .tutorial .container {
-    width: 75%;
-  }
-  .tutorial .container ul {
+
+  .steps {
     display: flex;
   }
-  .tutorial .container ul li {
-   flex: 1;
-    margin: 0 0 0 5rem;
+
+  .steps_title {
+   margin-top: 0;
+  
   }
-  .tutorial .container ul li:first-child {
-    margin-top: 0;
-    margin-left: .75rem;
+
+  .steps_btn {
+    width: 30%;
+    display: flex;
   }
+ 
   .restaurants .container {
     width: 75%;
   }
   .restaurants .container .cards {
-    display: grid !important;
+    display: grid;
     grid-template-columns: repeat(2, 1fr);
     column-gap: 2rem;
     row-gap: 2rem;
@@ -678,7 +680,7 @@ header a .arrow__back {
 
 .menu__header {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-around;
   align-items: center;
   padding: 1rem 6rem 0 1rem;
   text-align: center;
@@ -904,6 +906,10 @@ header a .arrow__back {
     width: 70%;
     margin: -4rem auto 0 auto;
   }
+
+  .footer {
+    padding-left: 8rem;
+  }
 }
 
 @keyframes checkMenu {
@@ -920,8 +926,10 @@ header a .arrow__back {
 .spinner {
   width: 100px;
   height: 100px;
-  position: absolute;
+  position: fixed;
+  top: 20%;
   z-index: 1;
+  pointer-events: none;
 }
 
 .spinner div {
@@ -935,12 +943,18 @@ header a .arrow__back {
   border-top-color: #9356DC ;
   border-radius: 50%;
   animation: spinnerOne 1.2s linear infinite;
+  pointer-events: none;
+  animation-iteration-count: 2;
+  animation-duration: 3s;
 }
 
 .spinner div:nth-child(2) {
   border: 10px solid transparent;
   border-bottom-color: #9356DC ;
   animation: spinnerTwo 1.2s linear infinite; 
+  pointer-events: none;
+  animation-iteration-count: 2;
+  animation-duration: 3s; 
 }
 
 @keyframes spinnerOne {
@@ -954,3 +968,4 @@ header a .arrow__back {
   50% {transform: rotate(180deg); border-width: 10px; }
   100% {transform: rotate(360deg); border-width: 1px; }
 }
+
