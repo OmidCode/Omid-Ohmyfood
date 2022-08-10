@@ -136,6 +136,9 @@ main {
   box-shadow: 0.25rem 0.25rem 10px rgb(0 0 0 / 25%);
 }
 
+.btn:hover {
+  cursor: pointer;
+}
 
 /**Steps-section**/
 
@@ -170,6 +173,7 @@ main {
   align-items: center;
 }
 
+
 .number {
   font-weight: 400;
   font-size: 0.87rem;
@@ -190,7 +194,6 @@ main {
   color: grey;
   margin-right: 20px;
 }
-
 
 /**Restaurants Cards section**/
 
@@ -269,16 +272,6 @@ main {
   display: flex;
   align-items: center;
   justify-content: center;
-}
-
-.like {
-  transition-duration: .25s;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 2rem;
-  position: absolute;
-  right: 15px;
 }
 
 /**Footer**/
@@ -638,16 +631,16 @@ header a .arrow__back {
 
   .steps {
     display: flex;
+    flex-wrap: wrap;
+    flex-basis: auto;
   }
 
   .steps_title {
    margin-top: 0;
-  
   }
 
   .steps_btn {
-    width: 30%;
-    display: flex;
+    width: auto;
   }
  
   .restaurants .container {
@@ -922,49 +915,58 @@ header a .arrow__back {
   width: 100px;
   height: 100px;
   position: fixed;
-  top: 20%;
-  z-index: 1;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   pointer-events: none;
 }
 
 .spinner div {
   box-sizing: border-box;
   position: absolute;
-  top: 0;
-  left: 0;
   width: 100%;
   height: 100%;
   border: 10px solid transparent;
   border-top-color: #9356DC ;
   border-radius: 50%;
-  animation: spinnerOne 1.2s linear infinite;
-  pointer-events: none;
+  animation: spinnerOne linear infinite;
+  animation-duration: 2.5s;
   animation-iteration-count: 2;
-  animation-duration: 3s;
+  animation-fill-mode:forwards;
 }
 
 .spinner div:nth-child(2) {
   border: 10px solid transparent;
   border-bottom-color: #9356DC ;
-  animation: spinnerTwo 1.2s linear infinite; 
-  pointer-events: none;
+  animation: spinnerTwo linear infinite; 
+  animation-duration: 2.5s; 
   animation-iteration-count: 2;
-  animation-duration: 3s; 
+  animation-fill-mode:forwards;
 }
 
 @keyframes spinnerOne {
-  0% {transform: rotate(0deg); border-width: 10px; }
-  50% {transform: rotate(180deg); border-width: 1px; }
-  100% {transform: rotate(360deg); border-width: 10px; }
+  0% {opacity: 1; transform: rotate(0deg); border-width: 10px; }
+  50% {opacity: 1; transform: rotate(180deg); border-width: 1px; }
+  100% {opacity: 0;  transform: rotate(360deg); border-width: 10px; }
 }
 
 @keyframes spinnerTwo {
-  0% {transform: rotate(0deg); border-width: 1px; }
-  50% {transform: rotate(180deg); border-width: 10px; }
-  100% {transform: rotate(360deg); border-width: 1px; }
+  0% {opacity: 1; transform: rotate(0deg); border-width: 1px; }
+  50% {opacity: 1;  transform: rotate(180deg); border-width: 10px; }
+  100% {opacity: 0; transform: rotate(360deg); border-width: 1px; }
 }
 
 /**like button**/
+
+.like {
+  transition-duration: .25s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  position: absolute;
+  right: 15px;
+}
 
 .second-like {
   opacity: 1;
@@ -981,13 +983,11 @@ header a .arrow__back {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   opacity: 0;
+  transition-duration: 0.85s;
+  cursor: pointer;
 }
 
 .second-like:hover {
-  opacity: 1;
-}
-
-.second-like:visited{
   opacity: 1;
 }
 
