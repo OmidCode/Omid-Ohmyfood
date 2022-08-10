@@ -271,17 +271,8 @@ main {
   justify-content: center;
 }
 
-.like_btn {
-  height: 100%;
-  width: 180%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
 .like {
   transition-duration: .25s;
-  background-color: white;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -680,17 +671,21 @@ header a .arrow__back {
 
 .menu__header {
   display: flex;
-  justify-content: space-around;
+  justify-content: flex-start;
   align-items: center;
   padding: 1rem 6rem 0 1rem;
   text-align: center;
-  margin-bottom: 5px;
+  padding-bottom: 5px;
   height: 80px;
 }
 
 .menu__header h1 {
   font-family: Shrikhand,"cursive";
   margin: 1.2rem 0;
+}
+
+.menu__header h2 {
+  font-family: Shrikhand,"cursive";
 }
 
 .menu__header .card__heart {
@@ -967,5 +962,38 @@ header a .arrow__back {
   0% {transform: rotate(0deg); border-width: 1px; }
   50% {transform: rotate(180deg); border-width: 10px; }
   100% {transform: rotate(360deg); border-width: 1px; }
+}
+
+/**like button**/
+
+.second-like {
+  opacity: 1;
+  color: linear-gradient(0deg, #9356dc, #ff79da);
+  transition: all 0.5s;
+  transition-duration: .25s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  position: absolute;
+  right: 15px;
+  background: -webkit-gradient(linear, left top, left bottom, from(#9356DC), to(#ff79da));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  opacity: 0;
+}
+
+.second-like:hover {
+  opacity: 1;
+}
+
+.second-like:visited{
+  opacity: 1;
+}
+
+.menu-like {
+  position: absolute;
+  right: 15px;
+  margin-right: 10px;
 }
 
