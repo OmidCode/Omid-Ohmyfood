@@ -138,6 +138,8 @@ main {
 
 .btn:hover {
   cursor: pointer;
+  opacity: 0.8;
+  box-shadow: 0.25rem 0.25rem 10px #000000c9;
 }
 
 /**Steps-section**/
@@ -631,12 +633,16 @@ header a .arrow__back {
 
   .steps {
     display: flex;
+    justify-content: center;
     flex-wrap: wrap;
     flex-basis: auto;
   }
 
   .steps_title {
-   margin-top: 0;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 0;
+    margin-top: 15px;
   }
 
   .steps_btn {
@@ -887,6 +893,14 @@ header a .arrow__back {
     grid-template-columns: repeat(3, 1fr);
     column-gap: 1rem;
   }
+
+  .steps_title {
+    padding-top: 20px;
+    margin-bottom: 0;
+    display: flex;
+    justify-content: center;
+  }
+
 }
 
 @media screen and (min-width: 1200px) {
@@ -912,13 +926,14 @@ header a .arrow__back {
 /* spinner loading */
 
 .spinner {
-  width: 100px;
-  height: 100px;
+  width: 200px;
+  height: 200px;
   position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   pointer-events: none;
+  z-index: 10;
 }
 
 .spinner div {
@@ -933,6 +948,7 @@ header a .arrow__back {
   animation-duration: 2.5s;
   animation-iteration-count: 2;
   animation-fill-mode:forwards;
+  z-index: 10;
 }
 
 .spinner div:nth-child(2) {
@@ -942,6 +958,7 @@ header a .arrow__back {
   animation-duration: 2.5s; 
   animation-iteration-count: 2;
   animation-fill-mode:forwards;
+  z-index: 10;
 }
 
 @keyframes spinnerOne {
