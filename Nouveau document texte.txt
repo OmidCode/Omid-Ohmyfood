@@ -1,0 +1,3 @@
+- coeur mobile à corriger
+- l'icon en violet 
+- le boutton restaurant mobile comme l'accueil
